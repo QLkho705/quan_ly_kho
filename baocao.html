@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Báo cáo tồn kho</title></head>
+<body>
+  <h2>Báo cáo tồn kho</h2>
+  <table border="1" cellpadding="5">
+    <tr><th>Đội</th><th>Tên hàng</th><th>Số lượng tồn</th></tr>
+    {% for row in data %}
+    <tr>
+      <td>{{ row[0] }}</td>
+      <td>{{ row[1] }}</td>
+      <td>{{ row[2] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p>
+    <a href="{{ url_for('export_excel') }}">📊 Xuất Excel</a> |
+    <a href="{{ url_for('export_pdf') }}">📄 Xuất PDF</a>
+  </p>
+  <p><a href="{{ url_for('index') }}">⬅ Quay lại</a></p>
+</body>
+</html>
